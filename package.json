@@ -1,0 +1,27 @@
+{
+  "name": "animal-farm-kids",
+  "version": "0.1.0",
+  "description": "a colourful, cheerful browser game for children aged 6–9 about running a little animal farm",
+  "license": "MIT",
+  "author": "StatelessSquad",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vitest/ui": "^2.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.5.0",
+    "typescript-eslint": "^8.71.2",
+    "vite": "^5.4.0",
+    "vitest": "^2.0.0"
+  }
+}
