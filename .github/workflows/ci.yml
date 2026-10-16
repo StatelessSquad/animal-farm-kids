@@ -14,10 +14,17 @@ jobs:
       # gitleaks via its official image: free for organizations (gitleaks-action needs a paid license for orgs)
       - name: gitleaks (full history)
         run: docker run --rm -v "$PWD:/repo" zricethezav/gitleaks:latest git /repo --redact --no-banner --exit-code 1
-  lint-and-test:
+  lint-test-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: pre-commit/action@v3.0.1
-      - name: Tests
-        run: make test
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: make lint
+      - run: make test
+      - run: make build
+      - run: npx playwright test
