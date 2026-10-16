@@ -27,4 +27,20 @@ jobs:
       - run: make lint
       - run: make test
       - run: make build
-      - run: npx playwright test
+      - name: Start preview server
+        id: preview
+        run: |
+          npx vite preview --port 4173 &
+          PREVIEW_PID=$!
+          echo "PREVIEW_PID=$PREVIEW_PID" >> $GITHUB_ENV
+          # wait for server to be ready
+          sleep 5
+      - name: Set BASE_URL
+        run: echo "BASE_URL=http://localhost:4173/animal-farm-kids/" >> $GITHUB_ENV
+      - name: Run Playwright tests
+        env:
+          BASE_URL: ${{ env.BASE_URL }}
+        run: npx playwright test
+      - name: Stop preview server
+        if: always()
+        run: kill $PREVIEW_PID
