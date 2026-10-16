@@ -10,8 +10,6 @@ test('chicken appears and can be moved', async ({ page }) => {
 
   // Get initial position
   const initialPos = await chicken.evaluate(el => {
-    const style = window.getComputedStyle(el);
-    const transform = style.transform; // matrix or translate
     // For simplicity, get bounding rect
     const rect = el.getBoundingClientRect();
     return { x: rect.left, y: rect.top };
