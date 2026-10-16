@@ -34,3 +34,14 @@ body {
   object-fit: cover;
   border-radius: 50%;
 }
+
+
+/* Game container - can be overridden by JS */
+#game-container {
+  /* width: 800px; height: 600px; background: #a8d08d; */
+}
+
+/* Chicken - can be overridden by JS */
+.chicken {
+  /* width: 50px; height: 50px; background: #ffeb3b; border-radius: 50%; */
+}
