@@ -9,16 +9,17 @@ body {
   color: #222;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1rem;
 }
 #root {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 1rem;
+  width: 100%;
+  max-width: 800px;
 }
-/* Icon */
+
+/* StatelessSquad icon */
 #stateless-icon {
   position: fixed;
   top: 1rem;
@@ -33,15 +34,4 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-}
-
-
-/* Game container - can be overridden by JS */
-#game-container {
-  /* width: 800px; height: 600px; background: #a8d08d; */
-}
-
-/* Chicken - can be overridden by JS */
-.chicken {
-  /* width: 50px; height: 50px; background: #ffeb3b; border-radius: 50%; */
 }
