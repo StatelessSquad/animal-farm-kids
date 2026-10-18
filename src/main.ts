@@ -20,7 +20,8 @@ const config = {
   }
 };
 
-const game = new Phaser.Game(config);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+new Phaser.Game(config);
 
 let chicken: Phaser.GameObjects.Sprite;
 const speed = 200; // pixels per second
@@ -59,6 +60,7 @@ function create() {
   // this.input.on('pointermove', function (pointer: any) { ... });
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function update(time: number, delta: number) {
   // Ensure chicken stays within bounds (already set via collideWorldBounds)
   // Optionally, we can add simple animation here
