@@ -2,7 +2,7 @@
   "name": "animal-farm-kids",
   "version": "0.1.0",
   "description": "a colourful, cheerful browser game for children aged 6–9 about running a little animal farm",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "author": "StatelessSquad",
   "type": "module",
   "scripts": {
